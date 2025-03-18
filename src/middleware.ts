@@ -26,6 +26,7 @@ export const config = {
      * - api (API routes)
      * - _next (Next.js internals)
      * - static files (e.g. .ico, .jpg, .png, .css, .js)
+     *
      */
     "/((?!api|_next|.*\\..*).*)",
   ],
