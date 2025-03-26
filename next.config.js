@@ -1,3 +1,4 @@
+const path = require("path");
 const { withSentryConfig } = require("@sentry/nextjs");
 // @ts-check
 /**
@@ -12,6 +13,10 @@ const nextConfig = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
     NEXT_SENTRY_DSN: process.env.NEXT_SENTRY_DSN,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+    prependData: `@use "@/styles/index.scss" as *;`, // 한 번만 `@use`하여 모든 SCSS에서 사용 가능하게 함
   },
   generateBuildId: async () => {
     return "v1";
