@@ -28,15 +28,22 @@ export default function AlertModal() {
   }, [alertProps]);
 
   const onClose = () => {
+    console.log(alertProps.callBackUrl);
     if (alertProps.callBackUrl) {
-      console.log("여기");
       router.push(alertProps.callBackUrl);
     }
     closeModal();
   };
 
-  const confirm = () => {
-    console.log("확인버튼");
+  const confirmOneButton = () => {
+    if (alertProps.callBackUrl) {
+      router.push(alertProps.callBackUrl);
+    }
+
+    closeModal();
+  };
+
+  const confirmTwoButton = () => {
     closeModal();
   };
 
@@ -50,9 +57,11 @@ export default function AlertModal() {
               <div className={styles.content}>
                 {alertProps?.title && <h1>{alertProps.title}</h1>}
                 <p>{formatMessage(alertProps?.message)}</p>
-                <button onClick={onClose}>
-                  {alertProps.confirmButtonName || "확인"}
-                </button>
+                <div className={styles.button_wrap}>
+                  <button onClick={confirmOneButton}>
+                    {alertProps.confirmButtonName || "확인"}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -65,12 +74,17 @@ export default function AlertModal() {
               <div className={styles.content}>
                 {alertProps?.title && <h1>{alertProps.title}</h1>}
                 <p>{formatMessage(alertProps?.message)}</p>
-                <button className={styles.confirm_btn} onClick={confirm}>
-                  {alertProps.confirmButtonName || "확인"}
-                </button>
-                <button onClick={onClose}>
-                  {alertProps.cancelButtonName || "취소"}
-                </button>
+                <div className={styles.button_wrap}>
+                  <button
+                    className={styles.confirm_btn}
+                    onClick={confirmTwoButton}
+                  >
+                    {alertProps.confirmButtonName || "확인"}
+                  </button>
+                  <button onClick={onClose}>
+                    {alertProps.cancelButtonName || "취소"}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

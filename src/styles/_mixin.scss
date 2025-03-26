@@ -1,5 +1,3 @@
-@import "/public/assets/styles/_variables.scss";
-
 @mixin min {
   @media (max-width: $min) {
     @content;
