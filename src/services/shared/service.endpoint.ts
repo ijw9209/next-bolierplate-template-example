@@ -5,11 +5,11 @@
 
 export const GET_SERVICE = {
   test: {
-    protected: "api/protected",
+    protected: 'api/protected',
   },
   seniorlife: {
-    post: "/senior-life/post",
-    detail: "/senior-life/post/:id",
+    post: '/senior-life/post',
+    detail: '/senior-life/post/:id',
   },
 };
 

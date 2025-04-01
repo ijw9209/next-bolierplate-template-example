@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Fragment, useEffect, useState } from "react";
-import { SeniorlifeSearchReqeustDto } from "@/dto";
-import { PAGE_URL_ENUM, YN_ENUM } from "@/common";
-import SeniorlifeService from "@/services/seniorlife/seniorlife.service";
-import { SeniorlifePostModel } from "../../models";
-import Link from "next/link";
+import { Fragment, useEffect, useState } from 'react';
+import { SeniorlifeSearchReqeustDto } from '@/dto';
+import { PAGE_URL_ENUM, YN_ENUM } from '@/common';
+import SeniorlifeService from '@/services/seniorlife/seniorlife.service';
+import { SeniorlifePostModel } from '../../models';
+import Link from 'next/link';
 
 export default function SeniorLife() {
   const [seniorLifePost, setSeniorLifePost] = useState<SeniorlifePostModel[]>(
-    []
+    [],
   );
 
   const seniorlifeSearchRequestDto: SeniorlifeSearchReqeustDto =
@@ -20,10 +20,10 @@ export default function SeniorLife() {
 
   const getSeniorlifePost = async () => {
     //주석 추가
-    seniorlifeSearchRequestDto.startDate = "20240623";
-    seniorlifeSearchRequestDto.endDate = "20240723";
-    seniorlifeSearchRequestDto.categoryId = "8";
-    seniorlifeSearchRequestDto.delYn = "N";
+    seniorlifeSearchRequestDto.startDate = '20240623';
+    seniorlifeSearchRequestDto.endDate = '20240723';
+    seniorlifeSearchRequestDto.categoryId = '8';
+    seniorlifeSearchRequestDto.delYn = 'N';
     seniorlifeSearchRequestDto.userDisplayYn = YN_ENUM.Y;
     seniorlifeSearchRequestDto.partnerDisplayYn = YN_ENUM.Y;
     seniorlifeSearchRequestDto.caregiverDisplayYn = YN_ENUM.Y;
@@ -33,15 +33,15 @@ export default function SeniorLife() {
     if (seniorlifeSearchRequestDto.isValid) {
       try {
         const res = await SeniorlifeService.findSeniorLife(
-          seniorlifeSearchRequestDto
+          seniorlifeSearchRequestDto,
         );
-        console.log("[res data]", res);
+        console.log('[res data]', res);
 
         if (res && res?.status === 200) {
           setSeniorLifePost(res.data.data.seniorLife);
         }
       } catch (error) {
-        console.log("Error in findSeniorLife:", error);
+        console.log('Error in findSeniorLife:', error);
       }
     }
   };

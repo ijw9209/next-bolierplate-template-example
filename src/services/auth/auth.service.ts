@@ -1,7 +1,7 @@
-import { BaseService } from "@/core";
+import { BaseService } from '@/core';
 
 class AuthService extends BaseService {
-  JWT_TOKEN_NAME = "righthands_jwt_token";
+  JWT_TOKEN_NAME = 'righthands_jwt_token';
 
   //일단 세션 스토리지
   getToken(): string {

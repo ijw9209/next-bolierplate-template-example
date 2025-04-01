@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
+import { useEffect, useState } from 'react';
+import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
 
 interface CustomSelectProps {
   label?: string;
@@ -20,10 +20,10 @@ const CustomSelect = ({
   id,
   value,
 }: CustomSelectProps) => {
-  console.log("value", value);
+  console.log('value', value);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(
-    value || null
+    value || null,
   );
 
   const handleSelect = (option: string) => {
@@ -44,45 +44,45 @@ const CustomSelect = ({
         }
       };
 
-      document.addEventListener("click", handleClickOutside);
+      document.addEventListener('click', handleClickOutside);
 
       return () => {
-        document.removeEventListener("click", handleClickOutside);
+        document.removeEventListener('click', handleClickOutside);
       };
     }
   }, [id]);
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", width: "100%" }}
+      style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
       id={id}
     >
       {label && (
-        <label style={{ marginBottom: "4px", fontWeight: "500" }}>
+        <label style={{ marginBottom: '4px', fontWeight: '500' }}>
           {label}
         </label>
       )}
       <div
         style={{
-          position: "relative",
-          display: "inline-block",
-          width: "100%",
+          position: 'relative',
+          display: 'inline-block',
+          width: '100%',
         }}
       >
         <div
           onClick={() => !isDisabled && setIsOpen((prev) => !prev)}
           style={{
-            padding: "8px",
-            borderRadius: "6px",
-            border: `1px solid ${error ? "red" : "#ccc"}`,
-            outline: "none",
-            cursor: "pointer",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            padding: '8px',
+            borderRadius: '6px',
+            border: `1px solid ${error ? 'red' : '#ccc'}`,
+            outline: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
-          <span>{selectedOption || "Select an option"}</span>
+          <span>{selectedOption || 'Select an option'}</span>
           {isOpen ? (
             <ArrowDropUp fontSize="small" />
           ) : (
@@ -92,18 +92,18 @@ const CustomSelect = ({
         {isOpen && !isDisabled && (
           <ul
             style={{
-              position: "absolute",
-              top: "100%",
-              left: "0",
-              width: "100%",
-              margin: "0",
-              padding: "0",
-              listStyle: "none",
-              border: "1px solid #ccc",
-              borderRadius: "6px",
-              backgroundColor: "#fff",
-              maxHeight: "200px",
-              overflowY: "auto",
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              width: '100%',
+              margin: '0',
+              padding: '0',
+              listStyle: 'none',
+              border: '1px solid #ccc',
+              borderRadius: '6px',
+              backgroundColor: '#fff',
+              maxHeight: '200px',
+              overflowY: 'auto',
               zIndex: 100,
             }}
           >
@@ -111,10 +111,10 @@ const CustomSelect = ({
               <li
                 key={index}
                 style={{
-                  padding: "8px",
-                  cursor: "pointer",
-                  backgroundColor: "#fff",
-                  borderBottom: "1px solid #ccc",
+                  padding: '8px',
+                  cursor: 'pointer',
+                  backgroundColor: '#fff',
+                  borderBottom: '1px solid #ccc',
                 }}
                 onClick={() => handleSelect(option)}
               >
@@ -125,7 +125,7 @@ const CustomSelect = ({
         )}
       </div>
       {error && (
-        <span style={{ color: "red", fontSize: "12px", marginTop: "4px" }}>
+        <span style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}>
           {error}
         </span>
       )}

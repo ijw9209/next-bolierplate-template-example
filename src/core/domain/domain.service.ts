@@ -1,8 +1,8 @@
-import { HTTP_METHOD } from "@/common/enums";
-import axios, { AxiosResponse } from "axios";
+import { HTTP_METHOD } from '@/common/enums';
+import axios, { AxiosResponse } from 'axios';
 // import JwtStorageService from "@/infrastructure/services/auth/jwt-storage.service";
-import { DomainPaginationDto } from "@/core/domain/domain-pagination.dto";
-import { getSession } from "next-auth/react";
+import { DomainPaginationDto } from '@/core/domain/domain-pagination.dto';
+import { getSession } from 'next-auth/react';
 
 export class DomainService {
   constructor() {}
@@ -16,7 +16,7 @@ export class DomainService {
   protected get<T>(
     baseUrl: string,
     path: string,
-    params?: any
+    params?: any,
   ): Promise<AxiosResponse<T>> {
     return this._api<T>(baseUrl, HTTP_METHOD.GET, path, params);
   }
@@ -30,7 +30,7 @@ export class DomainService {
   protected post<T>(
     baseUrl: string,
     path: string,
-    body?: any
+    body?: any,
   ): Promise<AxiosResponse<T>> {
     return this._api<T>(baseUrl, HTTP_METHOD.POST, path, body);
   }
@@ -44,7 +44,7 @@ export class DomainService {
   protected patch<T>(
     baseUrl: string,
     path: string,
-    body?: any
+    body?: any,
   ): Promise<AxiosResponse<T>> {
     return this._api<T>(baseUrl, HTTP_METHOD.PATCH, path, body);
   }
@@ -59,7 +59,7 @@ export class DomainService {
   protected put<T>(
     baseUrl: string,
     path: string,
-    body?: any
+    body?: any,
   ): Promise<AxiosResponse<T>> {
     return this._api<T>(baseUrl, HTTP_METHOD.PUT, path, body);
   }
@@ -73,7 +73,7 @@ export class DomainService {
   protected delete<T>(
     baseUrl: string,
     path: string,
-    params?: any
+    params?: any,
   ): Promise<AxiosResponse<T>> {
     return this._api<T>(baseUrl, HTTP_METHOD.DELETE, path, params);
   }
@@ -89,7 +89,7 @@ export class DomainService {
     baseUrl: string,
     path: string,
     params: any,
-    pagination: DomainPaginationDto
+    pagination: DomainPaginationDto,
   ): Promise<AxiosResponse<T>> {
     let request = {};
 
@@ -111,7 +111,7 @@ export class DomainService {
   protected parameterSwitcher(
     apiUrl: string,
     indicator?: string,
-    paramater?: any
+    paramater?: any,
   ) {
     if (!indicator) return apiUrl;
     apiUrl = apiUrl.replace(indicator, paramater);
@@ -123,9 +123,9 @@ export class DomainService {
     httpMethod: HTTP_METHOD,
     path: string,
     params?: any,
-    body?: any
+    body?: any,
   ): Promise<AxiosResponse<T>> {
-    if (path.indexOf("http") !== 0) {
+    if (path.indexOf('http') !== 0) {
       path = baseUrl + path;
     }
 
@@ -133,9 +133,9 @@ export class DomainService {
     const accessToken = session?.accessToken;
     // header values
     const headers: any = {
-      "Content-type":
-        params instanceof FormData ? "multipart/form-data" : "application/json",
-      sid: accessToken || "",
+      'Content-type':
+        params instanceof FormData ? 'multipart/form-data' : 'application/json',
+      sid: accessToken || '',
     };
     // const token = await getToken({ req: undefined, secret });
 
@@ -146,7 +146,7 @@ export class DomainService {
     // console.log("session", session);
     // console.log("accessToken", accessToken);
     if (accessToken) {
-      console.log("accessToken", accessToken);
+      console.log('accessToken', accessToken);
       headers.Authorization = `Bearer ${accessToken}`;
       // headers.sid = accessToken;
     }
@@ -185,12 +185,12 @@ export class DomainService {
     if (!value) {
       return;
     }
-    if (typeof value !== "object") {
+    if (typeof value !== 'object') {
       return value;
     }
     //빈 스트링 막기
     Object.keys(value).map((prop) => {
-      if (value[prop] === "") {
+      if (value[prop] === '') {
         delete value[prop];
       }
     });

@@ -1,38 +1,44 @@
-@font-face {
-  font-family: "Pretendard Variable";
+/* @font-face {
+  font-family: 'Pretendard Variable';
   font-weight: 800;
-  src: url("/assets/fonts/Pretendard-Black.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Black.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 700;
-  src: url("/assets/fonts/Pretendard-Bold.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Bold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 600;
-  src: url("/assets/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-SemiBold.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 500;
-  src: url("/assets/fonts/Pretendard-Medium.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Medium.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 400;
-  src: url("/assets/fonts/Pretendard-Regular.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 300;
-  src: url("/assets/fonts/Pretendard-Light.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Light.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 200;
+  src: url('/assets/fonts/Pretendard-Thin.woff2') format('woff2');
+} */
 
 * {
-  font-family: "Pretendard Variable" !important;
+  font-family: 'Pretendard Variable' !important;
   transition: all 0.3s;
 }
 
@@ -53,6 +59,13 @@ body {
   flex-direction: column;
 }
 
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6, */
+
 html,
 body,
 div,
@@ -60,12 +73,12 @@ span,
 applet,
 object,
 iframe,
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6, */
 p,
 blockquote,
 pre,
@@ -171,7 +184,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -227,44 +240,50 @@ input::placeholder {
   letter-spacing: -0.36px;
 }
 
-input[type="text"]:focus {
-  outline: 1px solid #a2acf6;
+input[type='text']:focus {
+  border: 1px solid #a2acf6;
+  background: #fff;
 }
 
-input[type="text"]:disabled {
+input[type='text']:disabled {
   border: 1px solid #d8d8e1;
   background: #f1f1f5;
 }
 
-input[type="radio"] {
+input[type='text']:hover {
+  border: 1px solid #d8d8e1;
+  background: #f7f7fb;
+}
+
+input[type='radio'] {
   appearance: none;
   cursor: pointer;
 }
-
-input[type="radio"]:not(checked) {
+/* 
+input[type='radio']:not(checked) {
   border: none;
-  background: url("/svgs/icon_radio_off.svg") no-repeat;
+  background: url('/svgs/icon_radio_off.svg') no-repeat;
 }
 
-input[type="radio"]:checked {
+input[type='radio']:checked {
   border: none;
-  background: url("/svgs/icon_radio_on.svg") no-repeat;
-}
+  background: url('/svgs/icon_radio_on.svg') no-repeat;
+} */
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   margin: 0;
   width: 24px;
   height: 24px;
   appearance: none;
   cursor: pointer;
 }
-
-input[type="checkbox"]:not(checked) {
-  background: url("/svgs/icon_checkbox_off.svg") no-repeat;
+/* 
+input[type='checkbox']:not(checked) {
+  background: url('/svgs/icon_checkbox_off.svg') no-repeat;
 }
-input[type="checkbox"]:checked {
-  background: url("/svgs/icon_checkbox_on.svg") no-repeat;
-}
+input[type='checkbox']:checked {
+  background: url('/svgs/icon_checkbox_on.svg') no-repeat;
+} */
 
 button {
   display: block;
@@ -327,7 +346,7 @@ button {
   top: 99.5%;
   left: 45%;
   color: #0b0d10;
-  background: url("/assets/images/common/prev.png");
+  background: url('/assets/images/common/prev.png');
   z-index: 5000;
 }
 
@@ -341,7 +360,7 @@ button {
   top: 99.5%;
   right: 45%;
   color: #0b0d10;
-  background: url("/assets/images/common/next.png");
+  background: url('/assets/images/common/next.png');
   z-index: 5000;
 }
 
@@ -475,7 +494,7 @@ select::-ms-expand {
     line-height: 2rem; /* 142.857% */
     letter-spacing: -0.042rem;
   }
-  input[type="radio"] {
+  input[type='radio'] {
     margin: 0;
     width: 2.8rem;
     height: 2.8rem;

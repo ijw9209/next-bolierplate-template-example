@@ -1,6 +1,6 @@
 // zustand의 create를 사용하여 store를 생성.
-import { AlertProps } from "@/types";
-import { create } from "zustand";
+import { AlertProps } from '@/types';
+import { create } from 'zustand';
 
 interface commonAlertModalStore {
   alertProps: AlertProps;
@@ -19,5 +19,5 @@ export const useCommonAlertModalStore = create<commonAlertModalStore>(
       set((state) => ({
         alertProps: { ...state.alertProps, display: false },
       })),
-  })
+  }),
 );

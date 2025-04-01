@@ -1,6 +1,6 @@
-import { YN_ENUM } from "@/common";
-import { BaseDto } from "@/core";
-import { IsNotEmpty, IsString, IsOptional, IsEnum } from "class-validator";
+import { YN_ENUM } from '@/common';
+import { BaseDto } from '@/core';
+import { IsNotEmpty, IsString, IsOptional, IsEnum } from 'class-validator';
 
 export type YNType = YN_ENUM.Y | YN_ENUM.N;
 
@@ -13,10 +13,10 @@ export class SeniorlifeSearchReqeustDto extends BaseDto {
 
   @IsString()
   @IsOptional()
-  categoryId: string = "";
+  categoryId: string = '';
   @IsString()
   @IsOptional()
-  delYn: string = "";
+  delYn: string = '';
 
   @IsEnum(YN_ENUM)
   @IsOptional()

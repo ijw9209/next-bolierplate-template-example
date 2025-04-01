@@ -1,4 +1,4 @@
-import { BaseModel } from "@/core/base.model";
+import { BaseModel } from '@/core/base.model';
 
 export class SeniorlifePostModel extends BaseModel<SeniorlifePostModel> {
   caregiverDisplayYn: string;

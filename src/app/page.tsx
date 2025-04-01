@@ -1,11 +1,11 @@
-"use client";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { PAGE_URL_ENUM, ALERT_TYPE_ENUM } from "@/common";
-import Link from "next/link";
-import { Fragment } from "react";
-import { useCommonAlertModalStore } from "@/store/common-alert-modal.store";
-import { LodashUtil } from "@/common";
-import { AlertProps } from "@/types";
+'use client';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { PAGE_URL_ENUM, ALERT_TYPE_ENUM } from '@/common';
+import Link from 'next/link';
+import { Fragment } from 'react';
+import { useCommonAlertModalStore } from '@/store/common-alert-modal.store';
+import { LodashUtil } from '@/common';
+import { AlertModalProps } from '@/types';
 
 export default function Home() {
   const { data: session } = useSession();
@@ -16,10 +16,10 @@ export default function Home() {
   }));
 
   const showAlert = lodashUtil.debounceUtil(() => {
-    const alertProps = new AlertProps();
+    const alertProps = new AlertModalProps();
     alertProps.display = true;
-    alertProps.message = "This is an alert message!";
-    alertProps.alertType = ALERT_TYPE_ENUM.ALERT;
+    alertProps.message = 'This is an alert message!';
+    alertProps.alertType = ALERT_TYPE_ENUM.NORMAL;
     setAlertProps(alertProps);
   }, 500);
 
@@ -31,7 +31,7 @@ export default function Home() {
         <Fragment>
           {/* <Link href="/protected">Go to Protected Page</Link> */}
           <Link href={PAGE_URL_ENUM.SENIORLIFE_LIST}>SeniorLife</Link>
-          <button onClick={() => signOut({ callbackUrl: "/" })}>
+          <button onClick={() => signOut({ callbackUrl: '/' })}>
             로그아웃
           </button>
         </Fragment>

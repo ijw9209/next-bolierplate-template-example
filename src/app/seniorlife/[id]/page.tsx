@@ -1,9 +1,9 @@
-"use client";
-import { useState, useEffect, Suspense } from "react";
-import { SeniorlifeRequestDetailDto } from "@/dto";
-import serniorlifeService from "@/services/seniorlife/seniorlife.service";
-import { API_STATUS_CODE_ENUM } from "@/common";
-import { SeniorlifePostDetailModel } from "@/models";
+'use client';
+import { useState, useEffect, Suspense } from 'react';
+import { SeniorlifeRequestDetailDto } from '@/dto';
+import serniorlifeService from '@/services/seniorlife/seniorlife.service';
+import { API_STATUS_CODE_ENUM } from '@/common';
+import { SeniorlifePostDetailModel } from '@/models';
 
 export default function SeniorLifeDetail({ params }) {
   const id = params.id;
@@ -28,10 +28,10 @@ export default function SeniorLifeDetail({ params }) {
     await seniorLifeRequestDetailDto.validateDto();
     if (seniorLifeRequestDetailDto.isValid) {
       let res = await serniorlifeService.findSeniorLifeDetail(
-        seniorLifeRequestDetailDto
+        seniorLifeRequestDetailDto,
       );
 
-      console.log("res", res.data.data);
+      console.log('res', res.data.data);
       //throw new Error("This is a data error");
       if (res && res.status === API_STATUS_CODE_ENUM.STATUS_200) {
         setSeniorLifeDetail(res.data.data);
