@@ -1,35 +1,41 @@
-@font-face {
-  font-family: "Pretendard Variable";
+/* @font-face {
+  font-family: 'Pretendard Variable';
   font-weight: 800;
-  src: url("/assets/fonts/Pretendard-Black.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Black.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 700;
-  src: url("/assets/fonts/Pretendard-Bold.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Bold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 600;
-  src: url("/assets/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-SemiBold.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 500;
-  src: url("/assets/fonts/Pretendard-Medium.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Medium.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 400;
-  src: url("/assets/fonts/Pretendard-Regular.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-weight: 300;
-  src: url("/assets/fonts/Pretendard-Light.woff2") format("woff2");
+  src: url('/assets/fonts/Pretendard-Light.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 200;
+  src: url('/assets/fonts/Pretendard-Thin.woff2') format('woff2');
+} */
 
 * {
   font-family: "Pretendard Variable" !important;
@@ -53,6 +59,13 @@ body {
   flex-direction: column;
 }
 
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6, */
+
 html,
 body,
 div,
@@ -60,12 +73,12 @@ span,
 applet,
 object,
 iframe,
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6, */
 p,
 blockquote,
 pre,
@@ -228,7 +241,8 @@ input::placeholder {
 }
 
 input[type="text"]:focus {
-  outline: 1px solid #a2acf6;
+  border: 1px solid #a2acf6;
+  background: #fff;
 }
 
 input[type="text"]:disabled {
@@ -236,20 +250,25 @@ input[type="text"]:disabled {
   background: #f1f1f5;
 }
 
+input[type="text"]:hover {
+  border: 1px solid #d8d8e1;
+  background: #f7f7fb;
+}
+
 input[type="radio"] {
   appearance: none;
   cursor: pointer;
 }
-
-input[type="radio"]:not(checked) {
+/* 
+input[type='radio']:not(checked) {
   border: none;
-  background: url("/svgs/icon_radio_off.svg") no-repeat;
+  background: url('/svgs/icon_radio_off.svg') no-repeat;
 }
 
-input[type="radio"]:checked {
+input[type='radio']:checked {
   border: none;
-  background: url("/svgs/icon_radio_on.svg") no-repeat;
-}
+  background: url('/svgs/icon_radio_on.svg') no-repeat;
+} */
 
 input[type="checkbox"] {
   margin: 0;
@@ -258,13 +277,13 @@ input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
 }
-
-input[type="checkbox"]:not(checked) {
-  background: url("/svgs/icon_checkbox_off.svg") no-repeat;
+/* 
+input[type='checkbox']:not(checked) {
+  background: url('/svgs/icon_checkbox_off.svg') no-repeat;
 }
-input[type="checkbox"]:checked {
-  background: url("/svgs/icon_checkbox_on.svg") no-repeat;
-}
+input[type='checkbox']:checked {
+  background: url('/svgs/icon_checkbox_on.svg') no-repeat;
+} */
 
 button {
   display: block;
