@@ -1,19 +1,19 @@
-import NextAuth from "next-auth";
-import axios from "axios";
+import NextAuth from 'next-auth';
+import axios from 'axios';
 // import GithubProvider from "next-auth/providers/github"
-import CredentialsProvider from "next-auth/providers/credentials";
+import CredentialsProvider from 'next-auth/providers/credentials';
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
-      name: "Credentials",
+      name: 'Credentials',
       // `credentials` is used to generate a form on the sign in page.
       // You can specify which fields should be submitted, by adding keys to the `credentials` object.
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        username: { label: "Username", type: "text" },
-        password: { label: "Password", type: "password" },
+        username: { label: 'Username', type: 'text' },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, req) {
         try {
@@ -23,7 +23,7 @@ const handler = NextAuth({
             {
               id: credentials.username,
               password: credentials.password,
-            }
+            },
           );
 
           if (res.data.data && res.data.data.admin) {
@@ -34,11 +34,11 @@ const handler = NextAuth({
               accessToken: res.data.data.admin.loginToken,
             }; // accessToken을 포함하여 반환
           } else {
-            console.log("Login failed:", res.data.error);
+            console.log('Login failed:', res.data.error);
             return null;
           }
         } catch (error) {
-          console.log("Error during authentication ", error);
+          console.log('Error during authentication ', error);
           return null;
         }
       },
@@ -67,10 +67,10 @@ const handler = NextAuth({
     },
   },
   pages: {
-    signIn: "/login",
+    signIn: '/login',
   },
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60, // 30 days
     updateAge: 24 * 60 * 60, // 24 hours
   },

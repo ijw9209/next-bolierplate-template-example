@@ -9,6 +9,10 @@
 # testing
 /coverage
 
+# Logs
+logs
+*.log
+
 # next.js
 /.next/
 /out/
@@ -27,7 +31,8 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env*
+.env.generate
+.env
 # vercel
 .vercel
 
@@ -35,9 +40,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# .vscode settings
+/.vscode
+.vscode
 
-.vscode/
-.next
-.dist
+/cypress/videos/
+/cypress/screenshots/
 
-.settings.json
+.nvmrc

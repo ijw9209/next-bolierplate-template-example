@@ -1,4 +1,4 @@
-import { ValidationError, validate } from "class-validator";
+import { ValidationError, validate } from 'class-validator';
 
 export class BaseDto {
   constructor(partial?: Object) {
@@ -35,9 +35,9 @@ export class BaseDto {
 
   protected exclude(property: string | { [x: string]: string[] }): this {
     if (property) {
-      if (typeof property === "object") {
+      if (typeof property === 'object') {
         Object.keys(property).forEach((k) => {
-          if (typeof this[k] === "object") {
+          if (typeof this[k] === 'object') {
             Object.keys(this[k]).forEach((k2) => {
               delete this[k][k2];
             });

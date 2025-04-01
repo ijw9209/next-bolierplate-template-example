@@ -1,6 +1,6 @@
-"use client";
-import TestService from "@/services/test/test.service";
-import { useEffect } from "react";
+'use client';
+import TestService from '@/services/test/test.service';
+import { useEffect } from 'react';
 
 export default function Protected() {
   useEffect(() => {

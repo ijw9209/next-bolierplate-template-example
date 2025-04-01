@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import * as Sentry from "@sentry/nextjs";
-import NextError from "next/error";
-import { useEffect } from "react";
+import * as Sentry from '@sentry/nextjs';
+import NextError from 'next/error';
+import { useEffect } from 'react';
 
 export default function GlobalError({
   error,
@@ -10,7 +10,7 @@ export default function GlobalError({
   error: Error & { digest?: string };
 }) {
   useEffect(() => {
-    console.log("this is global-Error.tsx");
+    console.log('this is global-Error.tsx');
     Sentry.captureException(error);
   }, [error]);
 

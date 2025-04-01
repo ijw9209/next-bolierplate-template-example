@@ -1,1 +1,1 @@
-export * from "./useFormatMessage";
+export * from './useFormatMessage';

@@ -1,2 +1,2 @@
-export * from "./domain-pagination.dto";
-export * from "./domain.service";
+export * from './domain-pagination.dto';
+export * from './domain.service';

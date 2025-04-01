@@ -1,8 +1,8 @@
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
 export const useFormatMessage = (message: string): any => {
   // return useMemo(() => {
-  return message.split("\n").map((line, index) => (
+  return message.split('\n').map((line, index) => (
     <Fragment key={index}>
       {line}
       <br />
@@ -35,15 +35,15 @@ export const useFormatMessage = (message: string): any => {
  */
 export const useFormatInfoModalMessage = (
   message: string,
-  icons?: string
+  icons?: string,
 ): any => {
-  return message.split("\n").map((line, index) => {
+  return message.split('\n').map((line, index) => {
     // `<b>...</b>` 태그를 감지하여 React 요소로 변환
     const formattedLine = line.split(/(<b>.*?<\/b>)/g).map((part, i) => {
-      if (part.startsWith("<b>") && part.endsWith("</b>")) {
+      if (part.startsWith('<b>') && part.endsWith('</b>')) {
         return (
           <b className="emphasize" key={i}>
-            {part.replace(/<\/?b>/g, "")}
+            {part.replace(/<\/?b>/g, '')}
           </b>
         );
       }

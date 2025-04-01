@@ -1,4 +1,4 @@
-import { ALERT_TYPE_ENUM } from "@/common";
+import { ALERT_TYPE_ENUM } from '@/common';
 
 export class AlertProps {
   display: boolean = false;

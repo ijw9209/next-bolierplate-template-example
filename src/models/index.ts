@@ -1,2 +1,2 @@
-export * from "./protected.model";
-export * from "./seniorlife";
+export * from './protected.model';
+export * from './seniorlife';

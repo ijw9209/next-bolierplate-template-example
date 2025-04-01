@@ -1,10 +1,10 @@
-"use client";
-import { useState, useEffect, Fragment } from "react";
-import styles from "./alert-modal.module.scss";
-import { AlertProps } from "@/types";
-import { useCommonAlertModalStore } from "@/store/common-alert-modal.store";
-import { useRouter } from "next/navigation";
-import { ALERT_TYPE_ENUM } from "@/common";
+'use client';
+import { useState, useEffect, Fragment } from 'react';
+import styles from './alert-modal.module.scss';
+import { AlertProps } from '@/types';
+import { useCommonAlertModalStore } from '@/store/common-alert-modal.store';
+import { useRouter } from 'next/navigation';
+import { ALERT_TYPE_ENUM } from '@/common';
 
 export default function AlertModal() {
   const router = useRouter();
@@ -15,7 +15,7 @@ export default function AlertModal() {
 
   const formatMessage = (message) => {
     // \n 문자를 <br /> 태그로 변환
-    return message.split("\n").map((line, index) => (
+    return message.split('\n').map((line, index) => (
       <Fragment key={index}>
         {line}
         <br />
@@ -59,7 +59,7 @@ export default function AlertModal() {
                 <p>{formatMessage(alertProps?.message)}</p>
                 <div className={styles.button_wrap}>
                   <button onClick={confirmOneButton}>
-                    {alertProps.confirmButtonName || "확인"}
+                    {alertProps.confirmButtonName || '확인'}
                   </button>
                 </div>
               </div>
@@ -79,10 +79,10 @@ export default function AlertModal() {
                     className={styles.confirm_btn}
                     onClick={confirmTwoButton}
                   >
-                    {alertProps.confirmButtonName || "확인"}
+                    {alertProps.confirmButtonName || '확인'}
                   </button>
                   <button onClick={onClose}>
-                    {alertProps.cancelButtonName || "취소"}
+                    {alertProps.cancelButtonName || '취소'}
                   </button>
                 </div>
               </div>

@@ -1,1 +1,1 @@
-export * from "./alert-props";
+export * from './alert-props';
